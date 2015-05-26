@@ -2,18 +2,8 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		 <script data-main="js/main" src="tp/require.js"></script>
-		 <script type="text/javaScript">
-			require.config({
-				paths: {
-					jquery: '../tp/jquery'
-				}
-			});
-		 </script>
 	</head>
-	<body>
-		<div id= 'containerDiv'>
-			<div id= 'headerDiv'></div>
-			<div id = 'bodyDiv'></div>
-		</div>
+	<body data-ng-controller='mainController'>
+		{{title}}
 	</body>
-</html>
+</html> 
