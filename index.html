@@ -3,6 +3,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+		 <link rel="stylesheet" type="text/css" href="css/main.css"/>
 		 
 		 <script data-main="js/main" src="tp/require.js"></script>
 		 <script type="text/javaScript">
@@ -19,18 +20,19 @@
 		 </script>
 	</head>
 	<body>
-		<div class="container-fluid">
-		<header class="top-header shows">
-			<div class="row">
-				<div class="col-md-6 header-logo">
-					<br>
-					<a href="index.html"> <h1 class="logo">Tesigners <span class="logo-head">TM</span></h1></a>
+		<div class="container-fluid mainDiv" >
+			<header class="top-header shows">
+				<div class="row">
+					<div class="col-md-6 header-logo">
+						<br>
+						<a class='headerLink' href="index.html"> <h1 class="logo">Tesigners <span class="logo-head">TM</span></h1></a>
+					</div>
+					<div class="col-md-6" id='loginDiv'>
+					</div>
 				</div>
-				<div class="col-md-6" id='loginDiv'>
-				</div>
-			</div>
-	</header>
-	<div id = 'bodyDiv'></div>
+			</header>
+			<div id = 'bodyDiv'></div>
+			<div id = 'footerDiv'></div>
 		</div>
 	</body>
 </html>

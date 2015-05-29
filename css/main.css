@@ -1,0 +1,44 @@
+.headerLink:hover{
+  text-decoration: none !important;
+}
+
+.mainDiv{
+	height : 100%;
+}
+
+#bodyDiv{
+	height: 75%;
+}
+
+#footerDiv{
+	height : 10%;
+}
+
+h1.logo {
+  margin-top: 11px;
+  display: inline-flex;
+}
+
+.logo-head{
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.logo-head {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.titleDiv{
+
+}
+
+.buttonDiv{
+
+}
+
+.inputDiv{
+
+}
