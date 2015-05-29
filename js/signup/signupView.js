@@ -36,7 +36,7 @@ define([], function(){
 		/*this.confirmPassword = '<input type="confirmPassword" id="confirmPasswordinput" name="confirmPassword" value="" placeholder="confirmPassword"/>';
 		var confirmPasswordDiv = '<div id="confirmPassworddiv">'+ this.confirmPassword +'</div>';*/
 		
-		this.signupButton = "<input type='button' name='submitButton' id='submitButton' value='REGISTER'/>";
+		this.signupButton = "<input type='button' name='submitButton' id='submitButton' value='SIGN UP'/>";
 		var signupButtonDiv = "<div id='signupButtonDiv' class='buttonDiv'> "+ this.signupButton +"</div>";
 		
 		container.append(  rowDiv + signupContainer + signupTitleDiv + signupDiv + phoneNumberDiv + passwordDiv /*+ confirmPasswordDiv */+ signupButtonDiv + divClose + divClose);
