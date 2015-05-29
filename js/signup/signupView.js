@@ -17,14 +17,14 @@ define([], function(){
 	
 	this.render = function(container){
 		
-		var rowDiv = "<div class ='row'>";
+		var rowDiv = "<div class ='row signUpRow'>";
 		
 		var signupContainer = "<div id='signupContainer' class='col-md-3 col-xs-5 col-sm-4'>";
 		
 		var signupTitleDiv = "<div id = 'signuptitle' class='titleDiv'>SIGNUP</div>";
 		var divClose = "</div>";
 		
-		this.userName = '<input type="text" id = "usernameinput" name="signup" value="" placeholder="Email or UserID"/>';
+		this.userName = '<input type="text" id = "usernameinput" name="signup" value="" placeholder="Email ID"/>';
 		var signupDiv = '<div id="usernamediv" class="inputDiv">'+ this.userName + '</div>';
 		
 		this. phoneNumber = '<input type="text" id = "phoneNumberinput" name="phoneNumber" value="" placeholder="Phone Number"/>';

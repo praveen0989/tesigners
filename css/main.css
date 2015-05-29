@@ -31,6 +31,13 @@ h1.logo {
   font-weight: 300;
 }
 
+#signupContainer{
+	background-image : url("../images/seller-day-28-29.jpg");
+	background-size : cover;
+	width: 100%;
+	height: 100%;
+}
+
 .titleDiv{
 
 }
@@ -41,4 +48,8 @@ h1.logo {
 
 .inputDiv{
 
+}
+
+.signUpRow{
+	height: 300px;
 }

@@ -19,16 +19,17 @@ define([], function(){
 		
 		var divClose = "</div>";
 		
-		this.userName = '<input type="text" id = "usernameinput" name="login" value="" placeholder="Email or UserID"/>';
-		var loginDiv = '<div id="usernamediv" class="col-md-2 inputDiv">'+ this.userName + '</div>';
+		var loginContainer = "<div id='loginContainer'>";
+		this.userName = '<input type="text" id = "usernameinput" name="login" value="" placeholder="Email ID"/>';
+		var loginDiv = '<div id="usernamediv" class="inputDiv">'+ this.userName + '</div>';
 		
 		this.password = '<input type="password" id="passwordinput" name="password" value="" placeholder="Password"/>';
-		var passwordDiv = '<div id="passworddiv" class="col-md-2 inputDiv">'+ this.password +'</div>';
+		var passwordDiv = '<div id="passworddiv" class="inputDiv">'+ this.password +'</div>';
 		
 		this.loginButton = "<input type='button' name='submitButton' id='submitButton' value='LOGIN'/>";
-		var loginButtonDiv = "<div id='loginButtonDiv' class='col-md-2 buttonDiv'>"+ this.loginButton +"</div>";
+		var loginButtonDiv = "<div id='loginButtonDiv' class=' buttonDiv'>"+ this.loginButton +"</div>";
 		
-		container.append( loginDiv + passwordDiv + loginButtonDiv );
+		container.append( loginContainer + loginDiv + passwordDiv + loginButtonDiv + divClose );
 		this.registerEvents(controller);
 	};
 };
