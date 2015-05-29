@@ -1,19 +1,36 @@
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+		 
 		 <script data-main="js/main" src="tp/require.js"></script>
 		 <script type="text/javaScript">
 			require.config({
 				paths: {
-					jquery: '../tp/jquery'
+					jquery: '../tp/jquery',
+					bootstrap : '../tp/bootstrap.min'
+				},
+				
+				shim : {
+					 "bootstrap" : { "deps" :['jquery'] }
 				}
 			});
 		 </script>
 	</head>
 	<body>
-		<div id= 'containerDiv'>
-			<div id= 'headerDiv'></div>
-			<div id = 'bodyDiv'></div>
+		<div class="container-fluid">
+		<header class="top-header shows">
+			<div class="row">
+				<div class="col-md-6 header-logo">
+					<br>
+					<a href="index.html"> <h1 class="logo">Tesigners <span class="logo-head">TM</span></h1></a>
+				</div>
+				<div class="col-md-6" id='loginDiv'>
+				</div>
+			</div>
+	</header>
+	<div id = 'bodyDiv'></div>
 		</div>
 	</body>
 </html>
