@@ -17,7 +17,14 @@ define([], function(){
 	
 	this.render = function(container){
 		
-		container.append("Footer");
+		var rowContainer = "<div class='container'>";
+		var row = "<div class='row'>";
+		var contactUsDiv = "<div id='contactus' class='col-md-3'><span class='glyphicon glyphicon-phone-alt'></span>Contact Us</div>";
+		var socialDiv = "<div id='socialDiv' class='col-md-3'><span class='glyphicon glyphicon-user'></span>Social</div>";
+		var mobileAppDiv = "<div id='mobileAppDiv' class='col-md-3'><span class='glyphicon glyphicon-phone'></span>Mobile App</div>";
+		var siteMapDiv = "<div id='siteMapDiv' class='col-md-3'><span class='glyphicon glyphicon-map-marker'></span>Site Map</div>";
+		var divClose = "</div>";
+		container.append(rowContainer + row + contactUsDiv + socialDiv + mobileAppDiv + siteMapDiv + divClose + divClose);
 		this.registerEvents(controller);
 	};
 };
