@@ -18,26 +18,26 @@ define([], function(){
 
 	this.getStatesOptionsString = function(){
 		var statesOptions = "<select class='form-control'>";
-		
+
 		for(var i = 0; i < this.model.states.length; i++){
-		
+
 			if(i === 16){
 				statesOptions += "<option selected='selected'>" + this.model.states[i] + "</option>";
 			}else {
 				statesOptions += "<option>" + this.model.states[i] + "</option>";
 			}
 		}
-		
+
 		statesOptions = statesOptions + "</select>";
 		return statesOptions;
 	};
-	
+
 	this.createAccountsPage = function(page1Container){
-		
+
 		var mainDiv = "<div id='page1'>";
 		var divClose = "</div>";
 		var accountModel = this.model.accountDetails;
-		
+
 		var container = '<div class="container">';
 		var header = '<h2>Account Information</h2>';
 		var form = '<form  class="form-horizontal" role="form">';
@@ -49,22 +49,22 @@ define([], function(){
 		var addr = '<div class="form-group"> <label class="control-label col-md-2" for="addr">Address</label>  <div class="col-md-6"> <input class="form-control" type="textarea"  id="addr" value= '+accountModel.addr +'> </div></div>';
 		var pCode = '<div class="form-group"> <label class="control-label col-md-2" for="pCode">Pin Code</label>  <div class="col-md-6"> <input class="form-control" id="pCode" value= '+accountModel.pCode +'> </div></div>';
 		var city = '<div class="form-group"> <label class="control-label col-md-2" for="city">City</label>  <div class="col-md-6"> <input class="form-control" id="city" value= '+accountModel.city +'> </div></div>';
-		
+
 		var state = '<div class="form-group"> <label class="control-label col-md-2" for="state">State</label>  <div class="col-md-6"> ';
 		state += this.getStatesOptionsString();
 		state = state + "</div></div>";
-		
-		
+
+
 		var nextButton = '<div class="form-group"> <div class="col-md-2 col-md-push-6"> <button type="button" id ="nextButton" class="btn btn-primary btn-block"> Next</button> </div></div>';
 		page1Container.append(mainDiv + container + header + form + businessName + displayName + vNum + cDesc + addr + pCode + city + state + nextButton + formClose + divClose + divClose );
-		
+
 	};
 
 	this.createBankingInfoPage = function(page2Container){
 		var labelNames = ["Account Holder Name","Bank Account Number","Retype Bank Account Number",
 											"Bank Name","Branch","City","State","IFSC Code"];
 
-		var formDiv = '<div class="container"> <h2>Banking Information</h2><form class="form-horizontal" role="form">';
+		var formDiv = '<div class="container" id="page2"> <h2>Banking Information</h2><form class="form-horizontal" role="form">';
 		var formGroupAccountName = '<div class="form-group"><label class="control-label col-md-2" for="AccountHolderName">Account Holder Name </label>'+
 																'<div class="col-md-6"><input type="text" class="form-control" id="accountHolderName" placeholder="Enter Account Holder Name"></div></div>';
 
