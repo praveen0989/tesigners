@@ -13,7 +13,7 @@
 
 #bodyDiv{
 	height: 75%;
-        margin-top: 80px;
+  margin-top: 80px;
 }
 
 #footerDiv{
@@ -77,7 +77,10 @@ h1.logo {
   	z-index: 99999;
   	background: #fff;
 }
+<<<<<<< HEAD
+=======
 
 .icon {
 	padding : 5px;
 }
+>>>>>>> fbf16cd8b38c1d16f0b4a6c1c215c4936fb8656c
