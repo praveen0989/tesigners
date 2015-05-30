@@ -1,13 +1,13 @@
 
-define(["footer/footerController", "footer/footerModel", "footer/footerView"],function(footerController, footerModel, footerView){
+define(["footer/footerController", "footer/footerModel", "footer/footerView"],function(FooterController, FooterModel, FooterView){
 	
 	var Footer = function(){
 		this.app;
 		this.create = function(app){
 		this.app = app;
-		this.controller = new footerController(this);
-		this.model = new footerModel();
-		this.view = new footerView(this.controller, this.model);
+		this.controller = new FooterController(this);
+		this.model = new FooterModel();
+		this.view = new FooterView(this.controller, this.model);
 		this.view.render($("#footerDiv"));
 	};
 	
