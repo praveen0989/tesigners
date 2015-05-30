@@ -8,7 +8,7 @@ define(["common/requestDispatcher", "common/request"], function(RequestDispatche
 		
 
 		this.onLogin = function(userName, password){
-			alert(CryptoJS.SHA3("ABC",{ outputLength: 512 }));
+			//alert(CryptoJS.SHA3("ABC"));
 			var successCallBack = function(){
 				alert("Success");
 			};
