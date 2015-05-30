@@ -61,6 +61,8 @@ h1.logo {
 }
 
 #loginContainer {
-	float: right;
-	padding-right: 15%;
+	padding-top:30px;
+}
+.loginBtn{
+	margin-left: 6px;
 }

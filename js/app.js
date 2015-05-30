@@ -63,14 +63,3 @@ var App = function(){
 	
 	return App;
 });
-
-
-
-
-
-
-
-
-
-
-
