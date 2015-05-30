@@ -16,6 +16,18 @@ define([], function(){
 		});
 	};
 	
+	this.createAccountsPage = function(page1Container){
+		page1Container.append("<div id='page1'> Page 1<input type='button' id ='nextbut' name ='but2'/></div>");
+	};
+	
+	this.createBankingInfoPage = function(page2Container){
+		page2Container.append("<div id='page2'> Page 2 <input type='button' id ='nextbut2' name ='but2'></div>");
+	};
+	
+	this.createProductInfoPage = function(page3Container){
+		page3Container.append("<div id='page3'> Page 3 <input type='button' id ='nextbut3' name ='but3'></div>");
+	};
+	
 	this.moveNext = function(){
 		
 		if(currentPageId === "page1"){
@@ -59,11 +71,19 @@ define([], function(){
 	
 	this.render = function(container){
 		
-		var page1 = "<div id='page1'> Page 1  <input type ='text' name='box'/> <input type='button' id ='nextbut' name ='but'></div>";
-		var page2 = "<div id='page2'> Page 2 <input type='button' id ='nextbut2' name ='but2'></div>";
-		var page3 = "<div id='page3'> Page 3 <input type='button' id ='nextbut3' name ='but3'></div>";
+		var page1 = $("<div></div>");
+		this.createAccountsPage(page1);
+		
+		var page2 = $("<div/>");
+		this.createBankingInfoPage(page2);
+		
+		var page3 = $("<div />");
+		this.createProductInfoPage(page3);
+		
 		currentPageId = "page1";
-		container.html( page1 + page2 + page3);
+		container.html(page1.html());
+		container.append(page2.html());
+		container.append(page3.html());
 		$("#page2").hide();
 		$("#page3").hide();
 		this.registerEvents(controller);
