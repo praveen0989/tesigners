@@ -38,6 +38,10 @@ h1.logo {
 
 #signupContainer{
 	background-color : #ededed;
+	border-radius: 2%;
+  	margin-top: 2%;
+  	position: relative;
+  	left: 1%;
 }
 
 .titleDiv{
