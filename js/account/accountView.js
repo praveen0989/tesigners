@@ -55,7 +55,7 @@ define([], function(){
 		state = state + "</div></div>";
 		
 		
-		var nextButton = '<div class="form-group"> <div class="col-md-3 col-md-push-7"> <button type="button" id ="nextButton" class="btn btn-primary wizardButton"> Next</button> </div></div>';
+		var nextButton = '<div class="form-group"> <div class="col-md-2 col-md-push-6"> <button type="button" id ="nextButton" class="btn btn-primary btn-block"> Next</button> </div></div>';
 		page1Container.append(mainDiv + container + header + form + businessName + displayName + vNum + cDesc + addr + pCode + city + state + nextButton + formClose + divClose + divClose );
 		
 	};
