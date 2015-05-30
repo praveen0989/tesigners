@@ -33,7 +33,50 @@
 					</div>
 				</div>
 			</header>
-			<div id = 'bodyDiv'></div>
+			<nav class="navbar top80px navbar-fixed-top">
+				<div class='container'>
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				  </button>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+				  <ul class="nav navbar-nav">
+					<li class="dropdown">
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Orders<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a id='pendingOrders' href="#" >Pending Orders</a></li>
+						<li><a id='completedOrders' href="#">Completed Orders</a></li>
+						<li><a id='cancelledOrders' href="#">Cancelled Orders</a></li>
+					  </ul>
+					</li>
+					
+					<li class="dropdown">
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Payments<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a id='transactions' href="#">Transactions</a></li>
+						<li><a id='invoices' href="#">Invoices</a></li>
+						<li><a id='settlements' href="#">Settlements</a></li>
+					  </ul>
+					</li>
+					<li><a id ='metrics' href="#">Metrics</a></li>
+				  </ul>
+				  <ul class="nav navbar-nav navbar-right">
+					<li><a id='account' href="#"><span class="glyphicon glyphicon-user" class="active"></span> Account</a></li>
+					<li><a id='productInfo' href="#"><span class="glyphicon glyphicon-log-out"></span> Product Info</a></li>
+					<li><a id='logout' href="#"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+				  </ul>
+				  </div>
+				</div>
+			</nav>
+			<div id = 'bodyDiv' style='margin-top:130px; height: 70%'></div>
+				<div id='ordersDiv'></div>
+				<div id='paymentsDiv'></div>
+				<div id ='metricsDiv'></div>
+				<div id ='accountsDiv'></div>
+				<div id='productDiv'></div>
 			<div id = 'footerDiv'></div>
 		</div>
 	</body>

@@ -82,6 +82,10 @@ h1.logo {
 	padding : 5px;
 }
 
+.top80px{
+	margin-top : 80px;
+}
+
 .wizardButton{
 	width: 70px;
 }

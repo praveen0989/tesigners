@@ -1,6 +1,6 @@
 
 define(["common/requestDispatcher", "common/request"], function(RequestDispatcher, Request){
-	var LoginController = function(app){
+	var ProductInfoController = function(app){
 	
 		this.app = app;
 		var requestDispatcher = new RequestDispatcher();
@@ -8,12 +8,8 @@ define(["common/requestDispatcher", "common/request"], function(RequestDispatche
 		
 
 		this.onLogin = function(userName, password){
-<<<<<<< HEAD
-			//alert(CryptoJS.SHA3("ABC"));
-=======
 		
 			//alert(CryptoJS.SHA3("ABC",{ outputLength: 512 }));
->>>>>>> fbf16cd8b38c1d16f0b4a6c1c215c4936fb8656c
 			var successCallBack = function(){
 				window.location = "dashboard.html";
 			};
@@ -32,5 +28,5 @@ define(["common/requestDispatcher", "common/request"], function(RequestDispatche
 		
 		
 	};
-	return LoginController;
+	return ProductInfoController;
 });
