@@ -8,13 +8,14 @@ define(["common/requestDispatcher", "common/request"], function(RequestDispatche
 		
 
 		this.onLogin = function(userName, password){
-			//alert(CryptoJS.SHA3("ABC"));
+		
+			//alert(CryptoJS.SHA3("ABC",{ outputLength: 512 }));
 			var successCallBack = function(){
-				alert("Success");
+				window.location = "dashboard.html";
 			};
 			
 			var failureCallBack = function(){
-				alert("Failure");
+				//alert("Failure");
 			};
 
 			request.setMimeType("application/json");

@@ -13,7 +13,7 @@
 
 #bodyDiv{
 	height: 75%;
-  margin-top: 80px;
+        margin-top: 80px;
 }
 
 #footerDiv{
@@ -76,4 +76,8 @@ h1.logo {
   	position: relative;
   	z-index: 99999;
   	background: #fff;
+}
+
+.icon {
+	padding : 5px;
 }

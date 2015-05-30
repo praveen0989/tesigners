@@ -1,16 +1,22 @@
-var ChangePwd = function(){
-	this.app;
-	
-	this.create = function(app){
-		this.app = app;
-		this.controller = new ChangePwdController(this);
-		this.model = new ChangePwdModel();
-		this.view = new ChangePwdView(this.controller, this.model);
-		this.view.render(this.app.bodyContainer);
-	};
-	
-	this.loadComponent = function(id, container){
-		this.app.loadComponent(id, container);
-	};
 
-};
+define(["dashboard/dashboardController", "dashboard/dashboardModel", "dashboard/dashboardView"],function(DashboardController, DashboardModel, DashboardView){
+	
+	var Dashboard = function(){
+		this.app;
+		this.create = function(app){
+			this.app = app;
+			this.controller = new DashboardController(this);
+			this.model = new DashboardModel();
+			this.view = new DashboardView(this.controller, this.model);
+			this.view.render(this.app.bodyContainer);
+		};
+	
+		this.loadComponent = function(id){
+			this.app.loadComponent(id);
+		};
+
+	};
+	
+	return Dashboard;
+	
+});

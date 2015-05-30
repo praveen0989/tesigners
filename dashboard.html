@@ -4,8 +4,8 @@
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
 		 <link rel="stylesheet" type="text/css" href="css/main.css"/>
-		 <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha3.js"></script>
-		 <script data-main="js/loginmain" src="tp/require.js"></script>
+		 
+		 <script data-main="js/dashboardmain" src="tp/require.js"></script>
 		 <script type="text/javaScript">
 			require.config({
 				paths: {
@@ -14,7 +14,7 @@
 					common : 'common',
 					tp : "../tp"
 				},
-
+				
 				shim : {
 					 "bootstrap" : { "deps" :['jquery'] }
 				}
@@ -23,11 +23,11 @@
 	</head>
 	<body>
 		<div class="container-fluid mainDiv" >
-			<header class="navbar navbar-default navbar-fixed-top">
+			<header class="top-header shows">
 				<div class="row">
 					<div class="col-md-2 col-md-offset-1 header-logo">
-						<br>
-						<a class='headerLink' href="index.html"> <h1 class="logo">Tesigners <span class="logo-head">TM</span></h1></a>
+						<br>	
+						<a class='headerLink' href="dashboard.html"> <h1 class="logo">Tesigners <span class="logo-head">TM</span></h1></a>
 					</div>
 					<div class="col-md-5 col-md-push-4" id='loginDiv'>
 					</div>
