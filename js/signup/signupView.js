@@ -19,9 +19,9 @@ define([], function(){
 		
 		var rowDiv = "<div class ='row signUpRow'>";
 		
-		var signupContainer = "<div id='signupContainer' class='col-md-3 col-xs-5 col-sm-4'>";
+		var signupContainer = "<div id='signupContainer' class='col-md-2 text-center col-md-offset-7 '>";
 		
-		var signupTitleDiv = "<div id = 'signuptitle' class='titleDiv'>SIGNUP</div>";
+		var signupTitleDiv = "<div id = 'signuptitle' class='titleDiv top-header shows'>REGISTER</div>";
 		var divClose = "</div>";
 		
 		this.userName = '<input type="text" id = "usernameinput" name="signup" value="" placeholder="Email ID"/>';
@@ -36,7 +36,7 @@ define([], function(){
 		/*this.confirmPassword = '<input type="confirmPassword" id="confirmPasswordinput" name="confirmPassword" value="" placeholder="confirmPassword"/>';
 		var confirmPasswordDiv = '<div id="confirmPassworddiv">'+ this.confirmPassword +'</div>';*/
 		
-		this.signupButton = "<input type='button' name='submitButton' id='submitButton' value='SIGN UP'/>";
+		this.signupButton = "<input type='button' name='submitButton' id='submitButton' class='buttonClass' value='SIGN UP'/>";
 		var signupButtonDiv = "<div id='signupButtonDiv' class='buttonDiv'> "+ this.signupButton +"</div>";
 		
 		container.append(  rowDiv + signupContainer + signupTitleDiv + signupDiv + phoneNumberDiv + passwordDiv /*+ confirmPasswordDiv */+ signupButtonDiv + divClose + divClose);

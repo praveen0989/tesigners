@@ -26,7 +26,7 @@ define([], function(){
 		this.password = '<input type="password" id="passwordinput" name="password" value="" placeholder="Password"/>';
 		var passwordDiv = '<div id="passworddiv" class="inputDiv">'+ this.password +'</div>';
 		
-		this.loginButton = "<input type='button' name='submitButton' id='submitButton' value='LOGIN'/>";
+		this.loginButton = "<input type='button' name='submitButton' id='submitButton' class='buttonClass' value='LOGIN'/>";
 		var loginButtonDiv = "<div id='loginButtonDiv' class=' buttonDiv'>"+ this.loginButton +"</div>";
 		
 		container.append( loginContainer + loginDiv + passwordDiv + loginButtonDiv + divClose );

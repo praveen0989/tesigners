@@ -2,6 +2,11 @@
   text-decoration: none !important;
 }
 
+.buttonClass {
+	background-color : #337ab7;
+	color : white;
+}
+
 .mainDiv{
 	height : 100%;
 }
@@ -31,17 +36,13 @@ h1.logo {
   font-weight: 300;
 }
 
-
 #signupContainer{
-	
-	float: right;
-	width: 200px;
-	height: 200px;
-    padding-right: 40%;
+	background-color : #ededed;
 }
 
 .titleDiv{
 	padding:5px;
+	
 }
 
 .buttonDiv{
