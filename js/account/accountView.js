@@ -7,7 +7,7 @@ define([], function(){
 	this.registerEvents = function(controller){
 		var that = this;
 
-		$("#nextbut").click(function(){
+		$("#nextButton").click(function(){
 			that.moveNext();
 		});
 		
@@ -16,8 +16,48 @@ define([], function(){
 		});
 	};
 	
+	this.getStatesOptionsString = function(){
+		var statesOptions = "<select class='form-control'>";
+		
+		for(var i = 0; i < this.model.states.length; i++){
+		
+			if(i === 16){
+				statesOptions += "<option selected='selected'>" + this.model.states[i] + "</option>";
+			}else {
+				statesOptions += "<option>" + this.model.states[i] + "</option>";
+			}
+		}
+		
+		statesOptions = statesOptions + "</select>";
+		return statesOptions;
+	};
+	
 	this.createAccountsPage = function(page1Container){
-		page1Container.append("<div id='page1'> Page 1<input type='button' id ='nextbut' name ='but2'/></div>");
+		
+		var mainDiv = "<div id='page1'>";
+		var divClose = "</div>";
+		var accountModel = this.model.accountDetails;
+		
+		var container = '<div class="container">';
+		var header = '<h2>Account Information</h2>';
+		var form = '<form  class="form-horizontal" role="form">';
+		var formClose = '</form>';
+		var businessName = '<div class="form-group"> <label class="control-label col-md-2" for="businessgrp">Business Group</label>  <div class="col-md-6"> <input class="form-control" id="businessgrp" value= '+accountModel.bName +'> </div></div>';
+		var displayName = '<div class="form-group"> <label class="control-label col-md-2" for="displayName">Display Name</label>  <div class="col-md-6"> <input class="form-control" id="displayName" value= '+accountModel.dName +'> </div></div>';
+		var vNum = '<div class="form-group"> <label class="control-label col-md-2" for="vNum">VAT or TIN Number</label>  <div class="col-md-6"> <input class="form-control" id="vNum" value= '+accountModel.vNum +'> </div></div>';
+		var cDesc = '<div class="form-group"> <label class="control-label col-md-2" for="cDesc">Company Description</label>  <div class="col-md-6"> <input class="form-control" id="cDesc" value= '+accountModel.cDesc +'> </div></div>';
+		var addr = '<div class="form-group"> <label class="control-label col-md-2" for="addr">Address</label>  <div class="col-md-6"> <input class="form-control" type="textarea"  id="addr" value= '+accountModel.addr +'> </div></div>';
+		var pCode = '<div class="form-group"> <label class="control-label col-md-2" for="pCode">Pin Code</label>  <div class="col-md-6"> <input class="form-control" id="pCode" value= '+accountModel.pCode +'> </div></div>';
+		var city = '<div class="form-group"> <label class="control-label col-md-2" for="city">City</label>  <div class="col-md-6"> <input class="form-control" id="city" value= '+accountModel.city +'> </div></div>';
+		
+		var state = '<div class="form-group"> <label class="control-label col-md-2" for="state">State</label>  <div class="col-md-6"> ';
+		state += this.getStatesOptionsString();
+		state = state + "</div></div>";
+		
+		
+		var nextButton = '<div class="form-group"> <div class="col-md-3 col-md-push-7"> <button type="button" id ="nextButton" class="btn btn-primary wizardButton"> Next</button> </div></div>';
+		page1Container.append(mainDiv + container + header + form + businessName + displayName + vNum + cDesc + addr + pCode + city + state + nextButton + formClose + divClose + divClose );
+		
 	};
 	
 	this.createBankingInfoPage = function(page2Container){
