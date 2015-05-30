@@ -87,16 +87,16 @@ define([], function(){
 															    '<div class="col-md-6"><input type="text" class="form-control" id="bankCity" placeholder="Enter city"></div></div>';
 
 		var formGroupBankState = '<div class="form-group"><label class="control-label col-md-2" for="bankState">State </label>'+
-															    '<div class="col-md-6"><input type="text" class="form-control" id="bankState" placeholder="Enter State"></div></div>';
+															    '<div class="col-md-6">'+ this.getStatesOptionsString() + '</div></div>';
 
-	  var formGroupBankState = '<div class="form-group"><div class="col-md-2 col-md-push-4"><button type="submit" class="btn btn-primary btn-block">Back</button></div>'+
+	  var formGroupButton = '<div class="form-group"><div class="col-md-2 col-md-push-4"><button type="submit" class="btn btn-primary btn-block">Back</button></div>'+
 																	'<div class="col-md-2 col-md-push-4"><button type="submit" class="btn btn-primary btn-block">Done</button></div></div>';
 
 		var formDivClose = '</form></div>';
 
 	  var form = formDiv + formGroupAccountName + formGroupAccountNumber + formGroupRetypeAccountNumber +formGroupBankName
-							+	formGroupBranchName + formGroupIfsc + formGroupBankCity + formGroupBankState + formDivClose;
-		//page2Container.append("<div id='page2'> Page 2 <input type='button' id ='nextbut2' name ='but2'></div>");
+							+	formGroupBranchName + formGroupIfsc + formGroupBankCity + formGroupBankState + formGroupButton +formDivClose;
+		
 		page2Container.append(form);
 
 	};
