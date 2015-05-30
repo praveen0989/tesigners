@@ -70,3 +70,9 @@ h1.logo {
 .loginBtn{
 	margin-left: 6px;
 }
+.sell-in-tesigners{
+	padding: 3em 0;
+  	position: relative;
+  	z-index: 99999;
+  	background: #fff;
+}

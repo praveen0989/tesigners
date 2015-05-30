@@ -9,9 +9,6 @@ define([], function(){
 	this. phoneNumber;
 	
 	this.registerEvents = function(controller){
-		$("#submitButton").click(function(){
-			controller.onfooter();
-		});
 	};
 	
 	

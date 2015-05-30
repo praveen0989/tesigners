@@ -4,13 +4,15 @@
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
 		 <link rel="stylesheet" type="text/css" href="css/main.css"/>
-		 
+		 <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha3.js"></script>
 		 <script data-main="js/main" src="tp/require.js"></script>
 		 <script type="text/javaScript">
 			require.config({
 				paths: {
 					jquery: '../tp/jquery',
-					bootstrap : '../tp/bootstrap.min'
+					bootstrap : '../tp/bootstrap.min',
+					common : 'common',
+					tp : "../tp"
 				},
 				
 				shim : {
