@@ -1,4 +1,4 @@
-define(["login/login", "signup/signup", "footer/footer", "dashboard/dashboard"], function(Login, SignUp, Footer, Dashboard){
+define(["login/login", "signup/signup", "footer/footer", "dashboard/dashboard", "account/account"], function(Login, SignUp, Footer, Dashboard, Account){
 
 	return({
 		"login" : {
@@ -19,6 +19,11 @@ define(["login/login", "signup/signup", "footer/footer", "dashboard/dashboard"],
 		"dashboard" : {
 			module : function(){
 				return new Dashboard();
+			}
+		},
+		"account" : {
+			module : function(){
+				return new Account();
 			}
 		}
 	});
