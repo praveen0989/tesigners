@@ -4,9 +4,8 @@ define([], function(){
 	
 		this.app = app;
 		
-		this.onLogin = function(){
-			//Validate User Inputs
-			this.app.loadComponent("changepassword");
+		this.onSignUp = function(){
+			window.location = "signup.html";
 		};
 	};
 	return SignUpController;
