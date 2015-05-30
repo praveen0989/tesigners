@@ -14,7 +14,11 @@ define(["dashboard/dashboardController", "dashboard/dashboardModel", "dashboard/
 		this.loadComponent = function(id){
 			this.app.loadComponent(id);
 		};
-
+		
+		this.getComponent = function(id){
+			return this.app.getComponent(id);
+		};
+		
 	};
 	
 	return Dashboard;

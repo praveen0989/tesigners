@@ -25,7 +25,7 @@ define([], function(){
 		});
 		
 		$("#productInfo").click(function(){
-			renderComponent("productinfo", $("#productDiv"));
+			renderComponent("productInfo", $("#productDiv"));
 		});
 		
 		$("#logout").click(function(){
@@ -33,27 +33,27 @@ define([], function(){
 		});
 		
 		$("#transactions").click(function(){
-			renderComponent("transactions", $("#paymentsDiv"));
+			renderComponent("payment", $("#paymentsDiv"));
 		});
 		
 		$("#invoices").click(function(){
-			renderComponent("invoices", $("#paymentsDiv"));
+			renderComponent("payment", $("#paymentsDiv"));
 		});
 		
 		$("#settlements").click(function(){
-			renderComponent("settlements", $("#paymentsDiv"));
+			renderComponent("payment", $("#paymentsDiv"));
 		});
 		
 		$("#pendingOrders").click(function(){
-			renderComponent("pendingorders", $("#ordersDiv"));
+			renderComponent("orders", $("#ordersDiv"));
 		});
 		
 		$("#completedOrders").click(function(){
-			renderComponent("completedorders", $("#ordersDiv"));
+			renderComponent("orders", $("#ordersDiv"));
 		});
 		
 		$("#cancelledOrders").click(function(){
-			renderComponent("cancelledorders", $("#ordersDiv"));
+			renderComponent("orders", $("#ordersDiv"));
 		});
 		
 		$("#metrics").click(function(){
@@ -64,7 +64,6 @@ define([], function(){
 	
 	
 	this.render = function(container){
-		container.html("Pending Orders");
 		this.registerEvents(controller);
 	};
 };

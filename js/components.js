@@ -1,4 +1,7 @@
-define(["login/login", "signup/signup", "footer/footer", "dashboard/dashboard", "account/account"], function(Login, SignUp, Footer, Dashboard, Account){
+define(["login/login", "signup/signup", "footer/footer", "dashboard/dashboard", "account/account",
+		"metrics/metrics", "orders/orders", "productInfo/productInfo", "payment/payment"
+		
+	], function(Login, SignUp, Footer, Dashboard, Account, Metrics, Orders, ProductInfo, Payment){
 
 	return({
 		"login" : {
@@ -24,6 +27,26 @@ define(["login/login", "signup/signup", "footer/footer", "dashboard/dashboard", 
 		"account" : {
 			module : function(){
 				return new Account();
+			}
+		},
+		"metrics" : {
+			module : function(){
+				return new Metrics();
+			}
+		},
+		"orders" : {
+			module : function(){
+				return new Orders();
+			}
+		},
+		"productInfo" : {
+			module : function(){
+				return new ProductInfo();
+			}
+		},
+		"payment" : {
+			module : function(){
+				return new Payment();
 			}
 		}
 	});
