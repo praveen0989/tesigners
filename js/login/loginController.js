@@ -8,9 +8,11 @@ define(["common/requestDispatcher", "common/request"], function(RequestDispatche
 		
 
 		this.onLogin = function(userName, password){
+		
 			alert(CryptoJS.SHA3("ABC",{ outputLength: 512 }));
 			var successCallBack = function(){
 				alert("Success");
+				app.loadComponent("dashboard");
 			};
 			
 			var failureCallBack = function(){

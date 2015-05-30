@@ -76,3 +76,7 @@ h1.logo {
   	z-index: 99999;
   	background: #fff;
 }
+
+.icon {
+	padding : 5px;
+}
