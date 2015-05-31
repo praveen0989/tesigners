@@ -1,4 +1,4 @@
-define(["login/login", "signup/signup", "footer/footer", "dashboard/dashboard"], function(Login, SignUp, Footer){
+define(["login/login", "signup/signup", "footer/footer"], function(Login, SignUp, Footer){
 
 	return({
 		"login" : {
