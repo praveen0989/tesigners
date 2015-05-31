@@ -1,4 +1,4 @@
-require(["app", "bootstrap"], function(App, BootStrap){
-	var app = new App();
+require(["dashboardapp", "bootstrap"], function(DashBoardApp, BootStrap){
+	var app = new DashBoardApp();
 	app.create("dashboard");
 });

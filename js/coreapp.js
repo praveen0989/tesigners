@@ -1,7 +1,7 @@
 
-define(["components", "controller", "model", "view"], function(Components, Controller, Model, View){
+define(["corecomponents", "controller", "model", "view"], function(Components, Controller, Model, View){
 
-var App = function(){
+var CoreApp = function(){
 	this.controller;
 	this.view;
 	this.components = [];
@@ -61,5 +61,5 @@ var App = function(){
 	};
 	};
 	
-	return App;
+	return CoreApp;
 });
