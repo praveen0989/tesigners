@@ -13,16 +13,16 @@ define(["jqGrid"], function(JQGrid){
 	this.registerEvents = function(controller){
 		var that = this;
 		$("#addButton").click(function(){
-			
+
 			var obj = {"T Shirt type" : "abc",
 						"Fabric Type" : "def",
 						"Sleeve" : "ghi",
 						"GSM" : "nmm"};
-						
-						
+
+
 			that.model.supportedEntities.push(obj);
 			 $("#productsTable").jqGrid('setGridParam', { datatype: 'local', data: that.model.supportedEntities }).trigger('reloadGrid');
-			
+
 		});
 	};
 
@@ -61,10 +61,10 @@ define(["jqGrid"], function(JQGrid){
 			tshirtGsmCategories+= populateOptions(this.model.tshirtGsm);
 
 			var addButton = "<div class='col-md-1'><button name='addButton' id='addButton' type='button' class='form-control btn btn-primary'>Add</button></div></div>	";
-			container.append( categorySelectDiv + divClose + subcategoryDiv + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
+			container.append( categorySelectDiv + divClose + subcategoryDiv + subcategoryLabel + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
 
 
-			var tableDiv = "<div id='tableDiv'><table id='productsTable'></table></div>";
+			var tableDiv = "<div id='tableDiv' class='col-md-10 col-md-offset-2'><table id='productsTable' class='table table-bordered table-hover'></table></div>";
 			container.append(tableDiv);
 
 
@@ -82,13 +82,12 @@ define(["jqGrid"], function(JQGrid){
                 rowList:[3,6],
                 loadonce: false,
                 sortname: 'T-Shirt Type',
-                sortorder: "asc", 
+                sortorder: "asc",
                 height: "auto", //210,
                 width:600,
                 viewrecords: true
             });
 
-			container.append( categorySelectDiv + divClose + subcategoryDiv + subcategoryLabel + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
 			this.registerEvents(controller);
 		}
 
