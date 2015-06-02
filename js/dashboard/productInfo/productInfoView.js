@@ -1,4 +1,4 @@
-define([], function(){
+define(["jqGrid"], function(JQGrid){
 	var ProductInfoView = function(controller, model){
 	this.controller = controller;
 	this.model = model;
@@ -12,8 +12,17 @@ define([], function(){
 
 	this.registerEvents = function(controller){
 		var that = this;
-		$("#submitButton").click(function(){
-			controller.onLogin($("#usernameinput").val(), $("#passwordinput").val());
+		$("#addButton").click(function(){
+			
+			var obj = {"T Shirt type" : "abc",
+						"Fabric Type" : "def",
+						"Sleeve" : "ghi",
+						"GSM" : "nmm"};
+						
+						
+			that.model.supportedEntities.push(obj);
+			 $("#productsTable").jqGrid('setGridParam', { datatype: 'local', data: that.model.supportedEntities }).trigger('reloadGrid');
+			
 		});
 	};
 
@@ -27,7 +36,6 @@ define([], function(){
 		div = div + "</select></div>";
 		return div;
 	};
-
 
 	this.render = function(container){
 
@@ -53,10 +61,32 @@ define([], function(){
 			tshirtGsmCategories+= populateOptions(this.model.tshirtGsm);
 
 			var addButton = "<div class='col-md-1'><button name='addButton' id='addButton' type='button' class='form-control btn btn-primary'>Add</button></div></div>	";
+			container.append( categorySelectDiv + divClose + subcategoryDiv + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
 
 
+			var tableDiv = "<div id='tableDiv'><table id='productsTable'></table></div>";
+			container.append(tableDiv);
 
 
+			$("#productsTable").jqGrid({
+                datatype: "local",
+                data: this.model.supportedEntities,
+                colNames:['T Shirt type','Fabric type', 'Sleeve','GSM'],
+                colModel:[
+                    {name:'T Shirt type',index:'T-Shirt Type',width:100},
+                    {name:'Fabric Type',index:'Fabric Type', width:100},
+                    {name:'Sleeve',index:'Sleeve', width:100},
+                    {name:'GSM',index:'GSM', width:100}
+                ],
+                rowNum:10,
+                rowList:[3,6],
+                loadonce: false,
+                sortname: 'T-Shirt Type',
+                sortorder: "asc", 
+                height: "auto", //210,
+                width:600,
+                viewrecords: true
+            });
 
 			container.append( categorySelectDiv + divClose + subcategoryDiv + subcategoryLabel + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
 			this.registerEvents(controller);

@@ -4,8 +4,8 @@
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
 		 <link rel="stylesheet" type="text/css" href="css/main.css"/>
-		 
 		 <script data-main="js/dashboardmain" src="tp/require.js"></script>
+		 
 		 <script type="text/javaScript">
 			require.config({
 				paths: {
@@ -16,11 +16,13 @@
 					metrics: "dashboard/metrics",
 					orders:"dashboard/orders",
 					payment:"dashboard/payment",
-					productInfo :"dashboard/productInfo"
+					productInfo :"dashboard/productInfo",
+					jqGrid : '../tp/jquery.jqGrid.min'
 				},
 				
 				shim : {
-					 "bootstrap" : { "deps" :['jquery'] }
+					 "bootstrap" : { "deps" :['jquery'] },
+					 "jqGrid" : {"deps": ['jquery']}
 				}
 			});
 		 </script>
