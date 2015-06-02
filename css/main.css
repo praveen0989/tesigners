@@ -89,3 +89,12 @@ h1.logo {
 .wizardButton{
 	width: 70px;
 }
+
+.dashboardItemHidden{
+	display :none;
+}
+
+.dashboardItemVisible{
+	display : block;
+}
+

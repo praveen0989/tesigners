@@ -8,6 +8,8 @@ define([], function(){
 	this.keepMeLoggedIn;
 	this. phoneNumber;
 	
+	this.isRendered = false;
+	
 	this.registerEvents = function(controller){
 		var that = this;
 		$("#submitButton").click(function(){
@@ -15,23 +17,52 @@ define([], function(){
 		});
 	};
 	
+	var populateOptions = function(array){
+		var i = 0;
+		var div = "";
+		for( i = 0; i < array.length; i++){
+			var category = array[i];
+			div = div + "<option id=" +category.id +">"+ category.name +"</option>";
+		}
+		div = div + "</select></span>";
+		return div;
+	};
+	
 	
 	this.render = function(container){
 		
-		var divClose = "</div>";
+		if(!this.isRendered){
+			var divClose = "</div>";
+			
+			var categorySelectDiv = "<div id='categorySelectDiv'><span><select name='categorySelect'>";
+			categorySelectDiv += populateOptions(this.model.categories) + "</div>";
+			
+			var subcategoryDiv = "<div id='categorySelectDiv'>";
+			
+			var tShirtCategories = "<span> <select name='shirtType'>";
+			tShirtCategories+= populateOptions(this.model.tShirtCategories);
+			
+			var tShirtFabricsCategories = "<span> <select name='fabricType'>";
+			tShirtFabricsCategories+= populateOptions(this.model.tshirtFabrics);
+			
+			var tshirtSleevesCategories = "<span> <select name='tshirtSleevesType'>";
+			tshirtSleevesCategories+= populateOptions(this.model.tshirtSleeves);
+			
+			var tshirtGsmCategories = "<span> <select name='tshirtGsmType'>";
+			tshirtGsmCategories+= populateOptions(this.model.tshirtGsm);
+			
+			var addButton = "<span><button name='addButton' id='addButton' type='button'>Add</button></span>";
+			
+			
+			
+			
+			
+			container.append( categorySelectDiv + divClose + subcategoryDiv + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
+			this.registerEvents(controller);
+		}
 		
-		var loginContainer = "<div id='loginContainer' class='form-inline' >";
-		this.userName = '<input type="text" id = "usernameinput" class="form-control" name="login" value="" placeholder="Email ID"/>';
-		var loginDiv = '<div id="usernamediv" class="inputDiv form-group">'+ this.userName + '</div>';
-		
-		this.password = '<input type="password" id="passwordinput" class="form-control" name="password" value="" placeholder="Password"/>';
-		var passwordDiv = '<div id="passworddiv" class="inputDiv form-group">'+ this.password +'</div>';
-		
-		this.loginButton = "<input type='button' name='submitButton' id='submitButton' class='btn btn-primary loginBtn' value='LOGIN'/>";
-		var loginButtonDiv = "<div id='loginButtonDiv' class=' buttonDiv'>"+ this.loginButton +"</div>";
-		
-		container.append( loginContainer + loginDiv + passwordDiv + this.loginButton + divClose );
-		this.registerEvents(controller);
+		$("#productDiv").removeClass("dashboardItemHidden");
+		$("#productDiv").addClass("dashboardItemVisible");
 	};
 };
 
