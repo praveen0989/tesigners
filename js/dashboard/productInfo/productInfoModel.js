@@ -108,7 +108,7 @@ define([], function(){
 		
 		
 		this.supportedEntities = [];
-		
+		this.supportedIds = [];
 		
 	};
 	return ProductInfoModel;
