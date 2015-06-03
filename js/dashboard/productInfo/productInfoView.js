@@ -7,13 +7,13 @@ define(["jqGrid"], function(JQGrid){
 	this.password;
 	this.keepMeLoggedIn;
 	this. phoneNumber;
-	
+
 	this.isRendered = false;
-	
+
 	this.registerEvents = function(controller){
 		var that = this;
 		$("#addButton").click(function(){
-			
+
 			
 			var tShirtType = $('#shirtType').val();
 			var fabricType = $('#fabricType').val();
@@ -33,14 +33,14 @@ define(["jqGrid"], function(JQGrid){
 						"Sleeve" : sleeveType,
 						"GSM" : gsmType
 					  };
-						
-						
+
+
 			that.model.supportedEntities.push(obj);
 			 $("#productsTable").jqGrid('setGridParam', { datatype: 'local', data: that.model.supportedEntities }).trigger('reloadGrid');
-			
+
 		});
 	};
-	
+
 	var populateOptions = function(array){
 		var i = 0;
 		var div = "";
@@ -48,40 +48,41 @@ define(["jqGrid"], function(JQGrid){
 			var category = array[i];
 			div = div + "<option id=" +category.id +">"+ category.name +"</option>";
 		}
-		div = div + "</select></span>";
+		div = div + "</select></div>";
 		return div;
 	};
-	
+
 	this.render = function(container){
-		
+
 		if(!this.isRendered){
 			var divClose = "</div>";
-			
+
 			var categorySelectDiv = "<div id='categorySelectDiv'><span><select id='categorySelect' name='categorySelect'>";
-			categorySelectDiv += populateOptions(this.model.categories) + "</div>";
-			
-			var subcategoryDiv = "<div id='categorySelectDiv'>";
-			
+			categorySelectDiv += populateOptions(this.model.categories) + "</div></div>";
+
+			var subcategoryDiv = "<div class='form-horizontal'><div id='subCategorySelectDiv' class='form-group'>";
+			var subcategoryLabel = "<div class='col-md-2'><label name='categorySelectLabel'>Please select your sub-category</label></div>";
+
 			var tShirtCategories = "<span> <select name='shirtType' id='shirtType'>";
 			tShirtCategories+= populateOptions(this.model.tShirtCategories);
-			
+
 			var tShirtFabricsCategories = "<span> <select name='fabricType' id='fabricType'>";
 			tShirtFabricsCategories+= populateOptions(this.model.tshirtFabrics);
-			
+
 			var tshirtSleevesCategories = "<span> <select name='tshirtSleevesType' id='tshirtSleevesType'>";
 			tshirtSleevesCategories+= populateOptions(this.model.tshirtSleeves);
-			
+
 			var tshirtGsmCategories = "<span> <select name='tshirtGsmType' id='tshirtGsmType'>";
 			tshirtGsmCategories+= populateOptions(this.model.tshirtGsm);
-			
-			var addButton = "<span><button name='addButton' id='addButton' type='button'>Add</button></span>";
-			container.append( categorySelectDiv + divClose + subcategoryDiv + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
-			
-			
-			var tableDiv = "<div id='tableDiv'><table id='productsTable'></table></div>";
+
+			var addButton = "<div class='col-md-1'><button name='addButton' id='addButton' type='button' class='form-control btn btn-primary'>Add</button></div></div>	";
+			container.append( categorySelectDiv + divClose + subcategoryDiv + subcategoryLabel + tShirtCategories + tShirtFabricsCategories + tshirtSleevesCategories + tshirtGsmCategories + addButton + divClose);
+
+
+			var tableDiv = "<div id='tableDiv' class='col-md-10 col-md-offset-2'><table id='productsTable' class='table table-bordered table-hover'></table></div>";
 			container.append(tableDiv);
 
-			
+
 			$("#productsTable").jqGrid({
                 datatype: "local",
                 data: this.model.supportedEntities,
@@ -94,16 +95,16 @@ define(["jqGrid"], function(JQGrid){
                 ],
                 loadonce: false,
                 sortname: 'T-Shirt Type',
-                sortorder: "asc", 
+                sortorder: "asc",
                 height: "auto", //210,
                 width:600,
                 viewrecords: true
             });
-			
+
 			this.registerEvents(controller);
 			this.isRendered = true;
 		}
-		
+
 		$("#productDiv").removeClass("dashboardItemHidden");
 		$("#productDiv").addClass("dashboardItemVisible");
 	};
