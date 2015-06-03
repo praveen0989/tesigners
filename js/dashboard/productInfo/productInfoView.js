@@ -37,7 +37,16 @@ define(["jqGrid"], function(JQGrid){
 		return div;
 	};
 
+	var showProductInfoPage = function(){
+		$('#ordersDiv').css('display','none');
+		$('#paymentsDiv').css('display','none');
+		$('#metricsDiv').css('display','none');
+		$('#accountsDiv').css('display','none');
+		$('#productDiv').css('display','block');
+	}
+
 	this.render = function(container){
+		showProductInfoPage();
 
 		if(!this.isRendered){
 			var divClose = "</div>";
@@ -89,6 +98,7 @@ define(["jqGrid"], function(JQGrid){
             });
 
 			this.registerEvents(controller);
+			this.isRendered = true;
 		}
 
 		$("#productDiv").removeClass("dashboardItemHidden");

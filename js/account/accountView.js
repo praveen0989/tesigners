@@ -2,6 +2,7 @@ define([], function(){
 	var AccountView = function(controller, model){
 	this.controller = controller;
 	this.model = model;
+	this.isRendered = false;
 	var currentPageId;
 
 	this.registerEvents = function(controller){
@@ -96,7 +97,7 @@ define([], function(){
 
 	  var form = formDiv + formGroupAccountName + formGroupAccountNumber + formGroupRetypeAccountNumber +formGroupBankName
 							+	formGroupBranchName + formGroupIfsc + formGroupBankCity + formGroupBankState + formGroupButton +formDivClose;
-		
+
 		page2Container.append(form);
 
 	};
@@ -148,6 +149,7 @@ define([], function(){
 
 	this.render = function(container){
 
+		if(!this.isRendered){
 		var page1 = $("<div></div>");
 		this.createAccountsPage(page1);
 
@@ -164,6 +166,8 @@ define([], function(){
 		$("#page2").hide();
 		$("#page3").hide();
 		this.registerEvents(controller);
+		this.isRendered = true;
+	}
 	};
 };
 
