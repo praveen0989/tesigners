@@ -3,18 +3,11 @@
 define([], function(){
 
 	var OrdersModel = function(){
-		
-		this.userName = 'hangout';
-		this.password = 'hangout';
-		
-		this.getUserName = function(){
-			return this.userName;
-		};
-		
-		this.getPassword = function() {
-			return this.password;
-		};
-		
+
+		this.pendingOrders = [];
+		this.completedOrders = [];
+		this.cancelledOrders = [];
+
 	};
 	return OrdersModel;
 });

@@ -17,18 +17,18 @@ define(["jqGrid"], function(JQGrid){
 		var that = this;
 		$("#addButton").click(function(){
 
-			
+
 			var tShirtType = $('#shirtType').val();
 			var fabricType = $('#fabricType').val();
 			var sleeveType = $('#tshirtSleevesType').val();
 			var gsmType = $('#tshirtGsmType').val();
-			
+
 			var tShirtId = $("#shirtType")[0]["selectedOptions"][0].id;
 			var fabricId = $('#fabricType')[0]["selectedOptions"][0].id;
 			var sleeveId = $('#tshirtSleevesType')[0]["selectedOptions"][0].id;
 			var gsmId = $('#tshirtGsmType')[0]["selectedOptions"][0].id;
 			var categoryId = $("#categorySelect")[0]["selectedOptions"][0].id;
-			
+
 			that.model.supportedIds.push(tShirtId + fabricId + sleeveId + gsmId + categoryId);
 			var obj = {
 						"T Shirt type" : tShirtType,
@@ -55,7 +55,16 @@ define(["jqGrid"], function(JQGrid){
 		return div;
 	};
 
+	var showProductInfoPage = function(){
+		$('#ordersDiv').css('display','none');
+		$('#paymentsDiv').css('display','none');
+		$('#metricsDiv').css('display','none');
+		$('#accountsDiv').css('display','none');
+		$('#productDiv').css('display','block');
+	};
+
 	this.render = function(container){
+		showProductInfoPage();
 
 		if(!this.isRendered){
 			var divClose = "</div>";
