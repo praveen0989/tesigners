@@ -22,7 +22,13 @@ define([], function(){
 		$('#metricsDiv').css('display','none');
 		$('#accountsDiv').css('display','none');
 		$('#ordersDiv').css('display','block');
-	}
+	};
+
+	var createOrderTable = fucntion(){
+
+
+
+	};
 
 	this.render = function(container){
 
