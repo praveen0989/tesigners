@@ -9,11 +9,11 @@ define([], function(){
 	this. phoneNumber;
 
 	var renderComponent = function(id, container){
-		var accountComponent = controller.app.getComponent(id);
-		if(!accountComponent){
+		var component = controller.app.getComponent(id);
+		if(!component){
 			controller.app.loadComponent(id, container);
 		} else {
-			accountComponent.view.render(container);
+			component.view.render(container);
 		}
 	};
 

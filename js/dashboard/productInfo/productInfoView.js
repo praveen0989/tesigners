@@ -10,6 +10,9 @@ define(["jqGrid"], function(JQGrid){
 
 	this.isRendered = false;
 
+	
+	
+	
 	this.registerEvents = function(controller){
 		var that = this;
 		$("#addButton").click(function(){
@@ -36,11 +39,11 @@ define(["jqGrid"], function(JQGrid){
 
 
 			that.model.supportedEntities.push(obj);
-			 $("#productsTable").jqGrid('setGridParam', { datatype: 'local', data: that.model.supportedEntities }).trigger('reloadGrid');
+			 $("#productsTable").jqGrid('setGridParam', { datatype: 'local', sortname: 'T-Shirt type',sortorder: "asc",data: that.model.supportedEntities }).trigger('reloadGrid');
 
 		});
 	};
-
+	
 	var populateOptions = function(array){
 		var i = 0;
 		var div = "";
@@ -91,7 +94,7 @@ define(["jqGrid"], function(JQGrid){
 			var tableDiv = "<div id='tableDiv' class='col-md-10 col-md-offset-2'><table id='productsTable' class='table table-bordered table-hover'></table></div>";
 			container.append(tableDiv);
 
-
+			var that = this;
 			$("#productsTable").jqGrid({
                 datatype: "local",
                 data: this.model.supportedEntities,
@@ -101,12 +104,29 @@ define(["jqGrid"], function(JQGrid){
                     {name:'Fabric Type',index:'Fabric Type'},
                     {name:'Sleeve',index:'Sleeve'},
                     {name:'GSM',index:'GSM'},
-					{name : "Remove", index : 'Remove'}
+					{name : "Remove", index : 'Remove', formatter: function(){
+						return "<input type='button' value='Remove' class ='removeBtn' ></input>";
+					}}
                 ],
-
-                sortname: 'T-Shirt Type',
+				gridComplete: function(){
+					
+					$(".removeBtn").click(function(event){
+						$(event.currentTarget).parent().parent().attr("id");
+						
+						var button = $(event.currentTarget);
+						var cell = button.parent();
+						var row = cell.parent();
+						var index = parseInt(row.attr("id")) - 1 ;
+						
+						that.model.supportedEntities.splice(index, 1);
+						that.model.supportedIds.splice(index, 1);
+						 $("#productsTable").jqGrid('setGridParam', { datatype: 'local', sortname: 'T-Shirt type',sortorder: "asc",data: that.model.supportedEntities }).trigger('reloadGrid');
+						
+					});
+				},
+                sortname: 'T-Shirt type',
                 sortorder: "asc",
-                height: "auto"
+                height: "auto" 
             });
 
 			this.registerEvents(controller);
